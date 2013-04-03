@@ -15,5 +15,14 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   <!-- -*- extra stuff goes here -*- -->
-  
+
+  <include package=".browser" />
+  <five:implements
+      class="Products.Archetypes.atapi.BaseContent"
+      interface=".interfaces.IQuintagroupSilogroupProvider"
+      />
+  <include package="archetypes.schemaextender" />
+  <adapter
+      factory=".extender.SiloExtender"
+      provides="archetypes.schemaextender.interfaces.ISchemaExtender" />
 </configure>
