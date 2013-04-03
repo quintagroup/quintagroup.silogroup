@@ -6,6 +6,12 @@
     i18n_domain="quintagroup.silogroup">
 
   <five:registerPackage package="." initialize=".initialize" />
+  <five:implements
+      class="Products.Archetypes.atapi.BaseContent"
+      interface=".interfaces.IQuintagroupSilogroupProvider"
+      />
+  <include package=".browser" />
+  <include package=".portlets" />
 
   <genericsetup:registerProfile
       name="default"
@@ -14,15 +20,12 @@
       description="Installs the quintagroup.silogroup package"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
-  <!-- -*- extra stuff goes here -*- -->
 
-  <include package=".browser" />
-  <five:implements
-      class="Products.Archetypes.atapi.BaseContent"
-      interface=".interfaces.IQuintagroupSilogroupProvider"
-      />
   <include package="archetypes.schemaextender" />
   <adapter
       factory=".extender.SiloExtender"
       provides="archetypes.schemaextender.interfaces.ISchemaExtender" />
+
+  <!-- -*- extra stuff goes here -*- -->
+
 </configure>
