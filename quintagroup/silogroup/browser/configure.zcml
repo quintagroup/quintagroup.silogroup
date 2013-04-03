@@ -2,6 +2,13 @@
            xmlns:browser="http://namespaces.zope.org/browser"
            i18n_domain="quintagroup.silogroup">
     <!-- -*- extra stuff goes here -*- -->
+    
+    <browser:page
+        for="*"
+        name="silonavigation"
+        class=".silonavigation.SiloNavigation"
+        permission="zope.Public" />
+
 
     <!-- If you are using plone version 3.0, you will need to include the 
          plone.browserlayer package in your buildout and uncomment the following
