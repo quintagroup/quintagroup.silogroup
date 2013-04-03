@@ -5,19 +5,20 @@ version = '1.0'
 
 setup(name='quintagroup.silogroup',
       version=version,
-      description="SiloGroup allows to generate custom navigation menu titles, hide or make them visible.",
+      description="SiloGroup allows to generate custom navigation menu titles,"
+                  " hide or make them visible.",
       long_description=open("README.txt").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+      open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from
       # http://pypi.python.org/pypi?:action=list_classifiers
       classifiers=[
-        "Framework :: Plone",
-        "Programming Language :: Python",
-        ],
-      keywords='',
-      author='',
-      author_email='',
-      url='http://svn.plone.org/svn/collective/',
+          "Framework :: Plone",
+          "Programming Language :: Python",
+      ],
+      keywords='navigation title',
+      author='Quintagroup',
+      author_email='support@quintagroup.com',
+      url='https://github.com/quintagroup/quintagroup.silogroup',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['quintagroup'],
@@ -33,6 +34,4 @@ setup(name='quintagroup.silogroup',
       [z3c.autoinclude.plugin]
       target = plone
       """,
-      setup_requires=["PasteScript"],
-      paster_plugins=["ZopeSkel"],
       )

@@ -5,11 +5,11 @@ from Products.Archetypes.public import StringField, StringWidget
 
 from archetypes.schemaextender.field import ExtensionField
 from archetypes.schemaextender.interfaces import (IOrderableSchemaExtender,
-    IBrowserLayerAwareExtender)
+                                                  IBrowserLayerAwareExtender)
 
 from quintagroup.silogroup import silogroupMessageFactory as _
 from quintagroup.silogroup.interfaces import (IQuintagroupSilogroupLayer,
-    IQuintagroupSilogroupProvider)
+                                              IQuintagroupSilogroupProvider)
 
 
 class SiloField(ExtensionField, StringField):
@@ -24,11 +24,11 @@ class SiloExtender(object):
 
     fields = [
         SiloField("silo",
-            widget=StringWidget(
-                label=_(u"Silo Title"),
-                description=_(u"Title for silo navigation."),
-                ),
-            ),
+                  widget=StringWidget(
+                      label=_(u"Silo Title"),
+                      description=_(u"Title for silo navigation."),
+                  ),
+                  ),
     ]
 
     def __init__(self, context):
@@ -42,7 +42,8 @@ class SiloExtender(object):
         @return: Dictionary of reordered field lists per schemata.
         """
         schematas["default"].remove("silo")
-        schematas["default"].insert(schematas["default"].index("title")+1,"silo")
+        schematas["default"].insert(schematas[
+                                    "default"].index("title")+1, "silo")
         return schematas
 
     def getFields(self):

@@ -1,12 +1,11 @@
-from zope import interface, schema
+from zope import interface
 from zope.formlib import form
-from five.formlib import formbase
 from plone.app.form.base import EditForm
 from plone.app.form.validators import null_validator
-from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 from quintagroup.silogroup import silogroupMessageFactory as _
+
 
 class ISiloNavigationSchema(interface.Interface):
     # -*- extra stuff goes here -*-
@@ -28,7 +27,8 @@ class SiloNavigation(EditForm):
             setattr(obj, 'silo', self.request.get(i.id+'_title', ''))
             obj.reindexObject(['exclude_from_nav', 'silo'])
 
-    @form.action(_(u"label_cancel", default=u"Cancel"), validator=null_validator, name=u'cancel')
+    @form.action(_(u"label_cancel", default=u"Cancel"),
+                 validator=null_validator, name=u'cancel')
     def handle_cancel_action(self, action, data):
         contextURL = self.context.absolute_url()
         self.request.response.redirect(contextURL)

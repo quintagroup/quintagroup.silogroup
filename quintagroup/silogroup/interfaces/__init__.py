@@ -1,2 +1,2 @@
-from quintagroupsilogrouplayer import IQuintagroupSilogroupLayer, IQuintagroupSilogroupProvider
-
+from quintagroupsilogrouplayer import (IQuintagroupSilogroupLayer,
+                                       IQuintagroupSilogroupProvider)

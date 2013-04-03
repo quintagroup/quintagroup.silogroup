@@ -3,4 +3,4 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 
 class NavRenderer(Renderer):
-     recurse = ViewPageTemplateFile('navigation_recurse.pt')
+    recurse = ViewPageTemplateFile('navigation_recurse.pt')
